@@ -1,0 +1,133 @@
+\documentclass[a4, 11pt]{report}
+
+
+\pagestyle{myheadings}
+\markboth{}{Paper I, 2001
+\ \ \ \ \ 
+\today 
+}               
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[flushleft]{paralist}[2013/06/09]
+
+
+
+\RequirePackage{geometry}
+\geometry{%
+  a4paper,
+  lmargin=2cm,
+  rmargin=2.5cm,
+  tmargin=3.5cm,
+  bmargin=2.5cm,
+  footskip=12pt,
+  headheight=24pt}
+
+
+\newcommand{\comment}[1]{{\bf Comment} {\it #1}}
+%\renewcommand{\comment}[1]{}
+
+\newcommand{\bluecomment}[1]{{\color{blue}#1}}
+%\renewcommand{\comment}[1]{}
+\newcommand{\redcomment}[1]{{\color{red}#1}}
+
+
+
+\usepackage{epsfig}
+\usepackage{pstricks-add}
+\usepackage{tgheros} %% changes sans-serif font to TeX Gyre Heros (tex-gyre)
+\renewcommand{\familydefault}{\sfdefault} %% changes font to sans-serif
+%\usepackage{sfmath}  %%%% this makes equation sans-serif
+%\input RexFigs
+
+
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newlength{\qspace}
+\setlength{\qspace}{20pt}
+
+
+\newcounter{qnumber}
+\setcounter{qnumber}{0}
+
+\newenvironment{question}%
+ {\vspace{\qspace}
+  \begin{enumerate}[\bfseries 1\quad][10]%
+    \setcounter{enumi}{\value{qnumber}}%
+    \item%
+ }
+{
+  \end{enumerate}
+  \filbreak
+  \stepcounter{qnumber}
+ }
+
+
+\newenvironment{questionparts}[1][1]%
+ {
+  \begin{enumerate}[\bfseries (i)]%
+    \setcounter{enumii}{#1}
+    \addtocounter{enumii}{-1}
+    \setlength{\itemsep}{5mm}
+    \setlength{\parskip}{8pt}
+ }
+ {
+  \end{enumerate}
+ }
+
+
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\Var}{Var}
+
+\def\d{{\mathrm d}}
+\def\e{{\mathrm e}}
+\def\g{{\mathrm g}}
+\def\h{{\mathrm h}}
+\def\f{{\mathrm f}}
+\def\p{{\mathrm p}}
+\def\q{{\mathrm q}}
+\def\s{{\mathrm s}}
+\def\t{{\mathrm t}}
+
+
+\def\A{{\mathrm A}}
+\def\B{{\mathrm B}}
+\def\E{{\mathrm E}}
+\def\F{{\mathrm F}}
+\def\G{{\mathrm G}}
+\def\H{{\mathrm H}}
+\def\P{{\mathrm P}}
+
+
+\def\bb{\mathbf b}
+\def \bc{\mathbf c}
+\def\bx {\mathbf x}
+\def\bn {\mathbf n}
+
+\newcommand{\low}{^{\vphantom{()}}}
+%%%%% to lower suffices: $X\low_1$ etc
+
+
+\newcommand{\subone}{ {\vphantom{\dot A}1}}
+\newcommand{\subtwo}{ {\vphantom{\dot A}2}}
+
+
+
+
+\def\le{\leqslant}
+\def\ge{\geqslant}
+
+
+\def\var{{\rm Var}\,}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+\def\half{{\textstyle \frac12}}
+
+\begin{document}
+
+    
