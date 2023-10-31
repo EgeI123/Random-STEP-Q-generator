@@ -86,7 +86,7 @@ def Delete(filename):
     os.remove(filename);
 
 Compile(GenerateQuestion())
-cmd = "C:/Users/egeis/Maths/PythonApplication1/Question.tex"
+cmd = "Question.tex"
 os.system(cmd)
 
 input("Enter to finish")
