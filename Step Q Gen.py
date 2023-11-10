@@ -63,6 +63,8 @@ def Compile(question):
     
     for string in template:
         text = text + string
+
+    text = text + question
         
     for line in lines:        
         if(qNum in line):
@@ -85,10 +87,20 @@ def Compile(question):
 def Delete(filename):
     os.remove(filename);
 
-Compile(GenerateQuestion())
-cmd = "Question.tex"
-os.system(cmd)
 
-input("Enter to finish")
+Compile(GenerateQuestion())
+cmd1 = "pdflatex Question.tex"
+os.system(cmd1)
+
+cmd2 = "Question.pdf"
+os.system(cmd2)
 
 Delete("Question.tex")
+Delete("Question.log")
+Delete("Question.aux")
+
+input("Enter when finished")
+
+Delete("Question.pdf")
+cmd3 = "taskkill /IM msedge.exe" #change depending on pdf viewer
+os.system(cmd3)
